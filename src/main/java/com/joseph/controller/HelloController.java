@@ -1,4 +1,4 @@
-package com.joseph.web;
+package com.joseph.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

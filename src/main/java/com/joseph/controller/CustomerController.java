@@ -1,4 +1,4 @@
-package com.joseph.web;
+package com.joseph.controller;
 
 import java.util.List;
 
@@ -47,13 +47,7 @@ public class CustomerController {
         return "redirect:/customer/list";
     }
 
-    /*@GetMapping("/updateForm")
-    public String showFormForUpdate(@RequestParam("customerId") int theId,
-                                    Model theModel) throws NullPointerException {
-        Customer theCustomer = customerService.getCustomer(theId);
-        theModel.addAttribute("customer", theCustomer);
-        return "customer-form";
-    }*/
+
 
     @GetMapping("/delete")
     public String deleteCustomer(@RequestParam("customerId") int theId) throws NullPointerException {
