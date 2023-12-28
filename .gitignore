@@ -83,4 +83,4 @@ nbdist/
 .nb-gradle/
 
 # Maven
-target/
+/target/
