@@ -19,23 +19,21 @@ Follow these steps to set up the project:
     - Ensure that Maven is using JDK 1.8.0_202.
 
 4. **Clone the project:**
-    - Run `git clone https://github.com/ayoub-ait-si-ahmad/orderCraftSolution.git`.
-    - Navigate to the project directory with `cd orderCraftSolution`.
+    - Run `git clone https://github.com/ayoub-ait-si-ahmad/orderCraftYoussefSolution.git`.
+    - Navigate to the project directory with `cd orderCraftYoussefSolution`.
 
 5. **Configure the database:**
-    - Change the database name, user, and password in the `/WEB-INF/dispatcher-servlet.xml` file. The configuration should look like this:
-      ```xml
-      <!-- DataSource configuration -->
-      <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-          <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-          <property name="url" value="jdbc:mysql://localhost:3306/yourDatabaseName"/>
-          <property name="username" value="yourUsername"/>
-          <property name="password" value="yourPassword"/>
-      </bean>
-      ```
+    - Change the database name, user, and password in the `/resources/database.properties` file. The configuration should look like this:
+        ```properties
+        # Database configuration
+        database.driver=com.mysql.cj.jdbc.Driver
+        database.url=jdbc:mysql://localhost:3306/yourDatabaseName?useSSL=false&useTimezone=true&serverTimezone=UTC
+        database.user=yourUsername
+        database.password=yourPassword
+        ```
 
 6. **Build and run the project:**
     - Run `mvn clean compile package`.
-    - Run `mvn tomcat7:run`.
+    - Run `mvn jetty:run`.
 
 Good luck!
