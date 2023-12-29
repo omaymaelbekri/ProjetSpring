@@ -1,38 +1,19 @@
-<!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Spring Web MVC Thymeleaf Hello World Example</title>
-
-    <!-- Boostrap core css -->
-    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
-
-    <!-- custom style -->
-    <link rel="stylesheet" th:href="@{/css/main.css}"/>
-
+    <title>Formulaire Client</title>
 </head>
-
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Tech Titans</a>
-</nav>
+<h2>Formulaire Client</h2>
 
-<main role="main" class="container">
+<form th:action="@{/customer/saveCustomer}" th:object="${customer}" method="post">
+    <!-- Ajoutez les champs du formulaire selon les propriétés de votre entité Customer -->
+    <label>Nom: <input type="text" th:field="*{name}" /></label><br/>
+    <label>Email: <input type="text" th:field="*{email}" /></label><br/>
+    <!-- Ajoutez d'autres champs du formulaire selon les propriétés de votre entité Customer -->
+    <input type="submit" value="Enregistrer"/>
+</form>
 
-    <div class="starter-template">
-        <h1>Customer Form</h1>
-        <h2>
-
-        </h2>
-    </div>
-
-</main>
-<!-- /.container -->
-
-<!-- Boostrap core js -->
-<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
 </body>
 </html>

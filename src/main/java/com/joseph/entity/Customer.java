@@ -1,12 +1,8 @@
 package com.joseph.entity;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name="customer")
@@ -25,6 +21,9 @@ public class Customer {
 
     @Column(name="email")
     private String email;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Commande> commandes;
 
     public Customer() {
 

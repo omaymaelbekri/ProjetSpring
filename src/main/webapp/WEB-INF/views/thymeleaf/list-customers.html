@@ -1,38 +1,30 @@
-<!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Spring Web MVC Thymeleaf Hello World Example</title>
-
-    <!-- Boostrap core css -->
-    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}"/>
-
-    <!-- custom style -->
-    <link rel="stylesheet" th:href="@{/css/main.css}"/>
-
+    <title>Liste des Clients</title>
 </head>
-
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Tech Titans</a>
-</nav>
+<h2>Liste des Clients</h2>
 
-<main role="main" class="container">
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Email</th>
 
-    <div class="starter-template">
-        <h1>List Customers</h1>
-        <h2>
-            <span th:text="'Hello, ' + ${message}"></span>
-        </h2>
-    </div>
+    </tr>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.email}"></td>
+        <td>
+            <a th:href="@{/customer/updateForm(customerId=${c.id})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/customer/delete(customerId=${c.id})}" class="btn btn-danger">Delete</a>
+        </td>
 
-</main>
-<!-- /.container -->
+    </tr>
+</table>
 
-<!-- Boostrap core js -->
-<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
 </body>
 </html>

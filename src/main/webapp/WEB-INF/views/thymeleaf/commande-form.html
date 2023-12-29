@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Commande Form</title>
+</head>
+<body>
+<h2>Commande Form</h2>
+
+<form action="#" th:action="@{/commande/saveCommande}" th:object="${commande}" method="post">
+    <label for="dateCommande">Date Commande:</label>
+    <input type="date" id="dateCommande" th:field="*{dateCommande}" required/>
+    <br/>
+    <td>
+        <!-- Add action buttons for update and delete -->
+        <a th:href="@{/customer/updateForm(customerId=${c.id})}" class="btn btn-primary">Update</a>
+        <a th:href="@{/customer/delete(customerId=${c.id})}" class="btn btn-danger">Delete</a>
+    </td>
+    <button type="submit">Save Commande</button>
+</form>
+</body>
+</html>

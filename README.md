@@ -1,39 +1,41 @@
-# Project Setup Instructions (Windows & MacOS)
+# OrderCraft - Gestion des Commandes d'ArtWood
 
-Follow these steps to set up the project:
+OrderCraft est une application de gestion des commandes développée par ArtWood. L'objectif principal de ce projet est de migrer l'application existante basée sur Java EE vers une architecture plus moderne utilisant Spring Core MVC avec Thymeleaf.
 
-1. **Remove existing JDK and Maven installations:**
-    - Uninstall all JDK installations and delete all JDK files from your computer.
-    - Remove the JDK path from your environment variables.
-    - Uninstall Maven and remove its path from your environment variables.
+## Fonctionnalités
 
-2. **Install JDK and Maven:**
-    - Download JDK 1.8.0_202 from [Oracle's website](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
-    - Download Maven from the [official Maven website](https://maven.apache.org/download.cgi).
-    - Install JDK and Maven on your computer.
-    - Set the paths of JDK and Maven in your environment variables.
+1. **Ajout de Commandes :**
+   Les utilisateurs peuvent ajouter de nouvelles commandes en spécifiant les détails tels que le client, les articles commandés, et la date de la commande.
 
-3. **Verify the installations:**
-    - Open the command line and run `mvn -version`. If the installed Maven version is displayed, the installation was successful.
-    - Run `java -version`. If the installed Java version is displayed, the installation was successful.
-    - Ensure that Maven is using JDK 1.8.0_202.
+2. **Visualisation des Commandes en Cours :**
+   Une interface conviviale basée sur Spring Core MVC et Thymeleaf permet aux utilisateurs de voir l'état d'avancement des commandes en cours, y compris les détails spécifiques de chaque commande.
 
-4. **Clone the project:**
-    - Run `git clone https://github.com/ayoub-ait-si-ahmad/orderCraftYoussefSolution.git`.
-    - Navigate to the project directory with `cd orderCraftYoussefSolution`.
+3. **Marquer les Commandes comme Complètes :**
+   Les utilisateurs ont la possibilité de marquer les commandes comme complètes une fois qu'elles ont été traitées, facilitant le suivi des commandes encore en attente.
 
-5. **Configure the database:**
-    - Change the database name, user, and password in the `/resources/database.properties` file. The configuration should look like this:
-        ```properties
-        # Database configuration
-        database.driver=com.mysql.cj.jdbc.Driver
-        database.url=jdbc:mysql://localhost:3306/yourDatabaseName?useSSL=false&useTimezone=true&serverTimezone=UTC
-        database.user=yourUsername
-        database.password=yourPassword
-        ```
+4. **Gestion des Clients :**
+   Un module de gestion des clients permet aux utilisateurs de créer, afficher et mettre à jour les informations clients pour une gestion centralisée.
 
-6. **Build and run the project:**
-    - Run `mvn clean compile package`.
-    - Run `mvn jetty:run`.
+5. **Suivi des Stocks :**
+   Intégration d'une fonctionnalité de suivi des stocks pour s'assurer que les articles nécessaires sont disponibles pour satisfaire les commandes.
 
-Good luck!
+6. **Rapports d'Analyse des Ventes :**
+   Un module de génération de rapports offre aux utilisateurs la possibilité d'analyser les tendances de vente, les préférences des clients, et les performances des articles. Intégration d'une bibliothèque de reporting, telle que JasperReports ou Apache POI, pour la génération des rapports d'analyse des ventes.
+
+## Stack Technique
+
+- **Langage de Programmation :** Java
+- **Frontend :** Thymeleaf pour les vues dynamiques
+- **Backend :** Spring Core (IOC, DI), Spring MVC, Hibernate, Spring Data JPA
+- **Gestion de Dépendances :** Apache Maven
+- **Base de Données :** MySQL
+- **Serveur d'Application :** Apache Tomcat
+- **Gestion des Tâches :** [Remplacez par l'outil de votre choix]
+- **Système de Gestion de Version :** Git et Github
+- **Logging :** SLF4J (Simple Logging Facade for Java) pour la gestion des journaux
+
+## Installation
+
+1. Clonez le projet depuis GitHub :
+   ```bash
+   git clone https://github.com/votre-utilisateur/OrderCraft.git

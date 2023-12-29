@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Commande List</title>
+</head>
+<body>
+<h2>Commande List</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Date Commande</th>
+        <th>Montant</th>
+        <!-- Add more columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="commande : ${commandes}">
+        <td th:text="${commande.commandeId}"></td>
+        <td th:text="${commande.date_commande}"></td>
+        <td th:text="${commande.customer_id}"></td>
+
+
+        <!-- Add more columns as needed -->
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
